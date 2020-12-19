@@ -23,5 +23,5 @@ http {
  
     index index.html index.php;
  
-    include /usr/local/etc/nginx/sites-enabled/*; 
+    include sites-enabled/*; 
 }
