@@ -1,7 +1,8 @@
 worker_processes  1;
  
-error_log  /Library/Logs/nginx/error.log debug;
+error_log  /usr/local/var/www/log/error.log debug;
  
+worker_rlimit_nofile 1024;
 events {
     worker_connections  1024;
 }
@@ -14,7 +15,7 @@ http {
                       '$status $body_bytes_sent "$http_referer" '
                       '"$http_user_agent" "$http_x_forwarded_for"';
  
-    access_log  /Library/Logs/nginx/access.log  main;
+    access_log  /usr/local/var/www/log/access.log  main;
  
     sendfile            on;
  
